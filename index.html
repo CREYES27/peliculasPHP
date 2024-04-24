@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!--configuraciones del navegador-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CodoFilms | Catalogo de Peliculas</title>
+        <link rel="stylesheet" href="./css/estilos.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/cbbd236219.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+    <body>
+      <header>
+          <nav>
+              <a class="anclaLogo" href="#">
+                  <i class="fas fa-film" aria-hidden="true"></i>
+                  <span>CodoFilms</span>
+              </a>
+              <ul class="listaNav">
+                  <li><a class="Estrenos" href="#tendencias">Estrenos</a></li>
+                  <li><a class="Series" href="#tendencias">Series</a></li>
+                  <li class="registro"><a href="./pages/registro.html">Registrarse</a></li>
+                  <li><a class="iniciarSesion" href="./pages/iniciosesion.html">Iniciar Sesión</a></li>
+              </ul>
+          </nav>
+      </header>
+      <main id="main">
+          <section class="sectionPrincipal">
+            <div class="contenedorTitulos">
+                <h1 class="animate__animated animate__zoomInUp">Bienvenido a CodoFlims <br> Películas y Series para Disfrutar</h1>
+                <h2 class="animate__animated animate__bounceInUp animate__delay-1s">Unete a CodoFlims ahora. <br> Cancela en cualquier momento.</h2>
+                <a href="./pages/registro.html">Registrate</a>
+            </div>
+          </section>
+          <section class="busca">
+              <h2>¿Qué estas buscando para ver?</h2>
+              <div class="buscador">
+                <input class="buscar" type="text" placeholder="Buscar">
+                <div class="btn">
+                    <i class="fa fa-search"></i>
+                </div>
+              </div>
+          </section>
+          <hr>
+          <section  data-aos="fade-up" data-aos-delay="200" class="peliculasTendencias"id="tendencias" >
+              <h2>Películas Estrenos y Series</h2>
+              <div class="galeriaTendencias">
+                  <a href="./pages/detalles.html">
+                      <div class="pelicula">
+                          <img class="imgTendencia" src="./assets/img/Elduro.jpg" alt="Wonka" loading="lazy">
+                          <div class="tituloPeli"><h4>El Duro</h4></div>
+                      </div>
+                  </a>
+                  <a href="./pages/detalles.html">
+                      <div class="pelicula">
+                          <img class="imgTendencia" src="./assets/img/inmaculada.jpg" alt="Aquaman and the Lost Kingdom" loading="lazy">
+                          <div class="tituloPeli"><h4>Inmaculada</h4></div>
+                      </div>
+                  </a>
+                  <a href="./pages/detalles.html">
+                      <div class="pelicula">
+                          <img class="imgTendencia" src="./assets/img/arca.jpg" alt="Migration" loading="lazy">
+                          <div class="tituloPeli"><h4>El Arca de Noé</h4></div>
+                      </div>
+                  </a>
+                  <a href="./pages/detalles.html">
+                      <div class="pelicula">
+                          <img class="imgTendencia" src="./assets/img/Kunfupanda4.jpg" alt="Wish" loading="lazy">
+                          <div class="tituloPeli"><h4>Kung Fu Panda 4</h4></div>
+                      </div>
+                  </a>
+                  <a href="./pages/detalles.html">
+                    <div class="pelicula">
+                        <img class="imgTendencia" src="./assets/img/Nell.jpg" alt="Wish" loading="lazy">
+                        <div class="tituloPeli"><h4>Nell la Renegada</h4></div>
+                    </div>
+                </a>
+                <a href="./pages/detalles.html">
+                    <div class="pelicula">
+                        <img class="imgTendencia" src="./assets/img/parasyte.jpg" alt="Wish" loading="lazy">
+                        <div class="tituloPeli"><h4>Parasyte los Grises</h4></div>
+                    </div>
+                </a>
+                <a href="./pages/detalles.html">
+                    <div class="pelicula">
+                        <img class="imgTendencia" src="./assets/img/3cuerpos.jpg" alt="Wish" loading="lazy">
+                        <div class="tituloPeli"><h4>3 Body Problem</h4></div>
+                    </div>
+                </a>
+                <a href="./pages/detalles.html">
+                    <div class="pelicula">
+                        <img class="imgTendencia" src="./assets/img/fallout.jpg" alt="Wish" loading="lazy">
+                        <div class="tituloPeli"><h4>Fallout</h4></div>
+                    </div>
+                </a>
+              </div>
+
+              <button>Anterior</button>  
+              <button>Siguiente</button>
+          </section>
+          <hr>
+          <section data-aos="fade-up" class="peliculasAclamadas">
+              <h2 class="tituloSection">Películas más Valoradas</h2>
+               <div class="galeriaAclamadas">
+                  <div class="peliculaItem">
+                      <img class="imgAclamada" src="./assets/img/aclamada_9.jpg" alt="aclamada_1" loading="lazy">
+                  </div>
+                  <div class="peliculaItem">
+                      <img class="imgAclamada" src="./assets/img/aclamada_12.jpg" alt="aclamada_2" loading="lazy">
+                  </div>
+                  <div class="peliculaItem">
+                      <img class="imgAclamada" src="./assets/img/doctorhouse.jpg" alt="aclamada_3" loading="lazy">
+                  </div>
+                  <div class="peliculaItem">
+                      <img class="imgAclamada" src="./assets/img/BlueLigth.jpg" alt="aclamada_4" loading="lazy">
+                  </div>
+                  <div class="peliculaItem">
+                      <img class="imgAclamada" src="./assets/img/Reinalagrima.jpg" alt="aclamada_4" loading="lazy">
+                  </div>
+                  <div class="peliculaItem">
+                      <img class="imgAclamada" src="./assets/img/aclamada_10.jpg" alt="aclamada_4" loading="lazy">
+                  </div>
+                  <div class="peliculaItem">
+                      <img class="imgAclamada" src="./assets/img/aclamada_11.jpg" alt="aclamada_4" loading="lazy">
+                  </div>
+                  <div class="peliculaItem">
+                      <img class="imgAclamada" src="./assets/img/aclamada_1.jpg" alt="aclamada_4" loading="lazy">
+                  </div>
+              </div>
+          </section>
+      </main>
+      <footer class="footer">
+          <nav class="navegacion">
+              <ul class="listaFooter">
+                  <li><a href="">Términos y condiciones</a></li>
+                  <li><a href="">Preguntas frecuentes</a></li>
+                  <li><a href="">Ayuda</a></li>
+                  <li><a class="administradorPeliculas">Administrador Peliculas</a></li>
+              </ul>
+          </nav>
+          <a href="#main">
+              <img class="flechaArriba" src="./assets/img/Flecha-up.png" alt="ir arriba flecha">
+          </a>
+      </footer>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+      AOS.init();
+      </script>
+  </body>
+</html>

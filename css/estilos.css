@@ -1,0 +1,744 @@
+/*reset valores*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+/*definicion de variables*/
+:root{
+    --main-color: rgb(220, 236, 231);
+    --secondary-color: #0b1021;
+    --third-color: #011936;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(16, 72, 85);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--third-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #007aff;
+}
+/*Pagina Index*/
+body{
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+
+h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+h2{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: center;
+}
+@media screen and (width <= 768px) {
+    h1{
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+}
+
+header, footer{
+    background-color: var(--third-color);
+    color: var(--main-color);
+    padding: 10px;
+}
+/*Estilos para el Header*/
+header{
+    height: 15vh;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    nav{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a{
+            text-decoration: none;
+            color: var(--main-color);
+            font-size: 1.5rem;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            column-gap: 20px;
+            .registro{
+                border-left: 2px solid rgba(108,212,192,0.75);
+                padding-left: 15px;
+                margin-left: 15px;
+            }
+            a{
+                font-size: 1.2rem;
+                &:hover {
+                    background-color: #011936;
+                    border-radius: 5px;
+                    transform: scale(0.95);
+                    box-shadow: 0 0 10px rgba(108,212,192,0.75);
+                }
+            }
+        }
+    }
+}
+
+/*Media query Responsive hasta 768px*/
+@media (width <= 768px) {
+    .header{
+        height: initial;
+        nav{
+            flex-direction: column;
+            row-gap: 20px;
+            a{
+                font-size: 0.7rem;
+            }
+            ul{
+                padding:initial;
+                flex-direction: column;
+                row-gap: 10px;
+                a{
+                    font-weight: 400;
+                    margin-right: initial;
+                    font-size: 0.8rem;
+                    padding: 0.2rem;
+                }
+            }
+        }
+    }
+}
+
+/*seccion principal*/
+.sectionPrincipal{
+    height: 85vh;
+    background:linear-gradient(to bottom, #000000a3, #000000a3), url("../assets/img/Cinema.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    .contenedorTitulos{
+        text-align: center;
+        backdrop-filter: blur(10px);
+        width: 60%;
+        margin: 0 auto;
+        border-radius: 10px;
+        a{
+            margin-top: 20px;
+            display: inline-block;
+            text-decoration: none;
+            color: var(--main-color);
+            font-size: 1.5rem;
+            border: 2px solid var(--main-color);
+            border-radius: 10px;
+            padding: 10px 20px;
+            background-color: #007aff; 
+             &:hover {
+                background-color: #0b1021;
+                transform: scale(0.95);
+                box-shadow: 0 0 10px rgba(108,212,192,0.75);
+            }
+        }
+    }
+}
+
+@media screen and (width <= 768px) {
+    .sectionPrincipal{
+        height: initial;
+        background:linear-gradient(to bottom, #000000a3, #000000a3),url("../assets/img/Movies.jpg");
+        .contenedorTitulos{
+            width: 90%;
+            backdrop-filter:initial;
+            a{
+                font-size: 1.5rem;
+            }
+        }
+    }
+  
+}
+
+.busca{
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+.buscador{
+    position: absolute;
+    left: 48%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+}
+.buscar{
+    outline: none;
+    box-sizing: border-box;
+    height: 40px;
+    width: 250px;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #000;
+    border-radius: 15px;
+    border: 1px solid #007aff;
+    transition: all .6s ease;
+
+    &:hover {
+        background-color: var(--main-color);
+        transform: scale(0.95);
+        box-shadow: 0 0 10px rgba(108,212,192,0.75);
+    }
+}
+::placeholder{
+    color: grey;
+}
+.btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: #007aff;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: 2s;
+    i{
+        font-size: 20px;
+        color: var(--main-color);
+        line-height: 60px;
+        transition: all .7 ease;
+       
+    }
+}
+.buscador:hover input{
+    width: 450px;
+    i{
+        transform: rotate(-360deg);
+    }
+}
+.btn:hover{
+    background: #007aff;
+    background-color: #0b1021;
+    transform: scale(0.95);
+    box-shadow: 0 0 10px rgba(108,212,192,0.75);
+}
+
+.peliculasTendencias{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    h2{
+        margin: 20px;
+    }
+    button{
+        margin-top: 50px;
+        margin-bottom: 20px;
+        color: var(--main-color);
+        background-color: #007aff;
+        border-radius: 5px;
+        font-size: 16px;
+        padding: 5px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover {
+            background-color: #0b1021;
+            transform: scale(0.95);
+            box-shadow: 0 0 10px rgba(108,212,192,0.75);
+        }
+    }
+
+}
+.galeriaTendencias{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    text-align: center;
+    div{
+        width: 230px;
+        height: 350px;
+        .tituloPeli{
+            height: 30px;
+            color: var(--main-color);
+            text-decoration: none;
+        }
+        img{
+            width: 85%;
+            height: 85%;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 1px -5px 24px -4px rgba(108,212,192,0.75);
+            &:hover{
+                box-shadow: 0 0 20px #36739fcd;
+                transform: scale(1.05);
+                transition: all 350ms ease-in-out;
+             }
+        }
+    }
+}
+/*section Aclamadas*/
+.peliculasAclamadas{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    h2{
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    .galeriaAclamadas{
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0px 0px 20px 0px;
+        .peliculaItem{
+            border-radius: 15px;
+            width: 150px;
+            min-width: 150px;
+            margin-left: 30px;
+            flex-shrink: 0;
+            justify-content: space-evenly;
+            .imgAclamada{
+                border-radius: 5%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                &:hover{
+                    box-shadow: 0 0 20px #36739fcd;
+                    transform: scale(0.95);
+                    transition: all 350ms ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+@media (width <= 768px) {
+    .main{
+        .sectionPrincipal{
+            height: 50vh;
+            .contenedorTitulos{
+                font-size: 2rem;
+                h2{
+                    font-size: 1.2rem;
+                }
+            }
+            .btn{
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+        .busca{
+            height: 20vh;
+            font-size: 1.6rem;
+            .buscador{
+                .buscar{
+                    font-size: 1rem;
+                    height: 40px;
+                    width: 300px;
+                }
+                .btn{
+                    height: 30px;
+                }
+            }
+        }
+        .peliculasTendencia{
+            width: 95%;
+            h2{
+                font-size: 2rem;
+            }
+            .peliculas{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .peliculasAclamadas{
+            .tituloSection{
+                font-size: 2rem;
+            }
+            .aclamadas{
+                .peliculaItem{
+                    width: 150px;
+                    min-width: 150px;
+                    margin-left: 20px;
+                    font-size: 15px;
+                    .imgAclamada{
+                        width: 90%;
+                        height: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.footer{
+    background-color:#011936;
+    color: var(--main-color);
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    .navegacion{
+        display: flex;
+        align-items: center;
+        .listaFooter{
+            list-style: none;
+            display: flex;
+            font-weight: 700;
+            font-size: 1.2rem;
+            column-gap: 20px;
+            justify-content: space-between;
+            a{
+                text-decoration: none;
+                color: var(--main-color)
+            }
+            .administradorPeliculas{
+                background-color: #007aff;
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                &:hover {
+                    background-color: #0b1021;
+                    transform: scale(0.95);
+                    box-shadow: 0 0 10px rgba(108,212,192,0.75);
+                }
+            }
+        }
+    }
+    .flechaArriba{
+        cursor: pointer;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (width <= 768px) {
+    .footer{
+        height: initial;
+        padding-top:15px;
+        padding-bottom: 20px;
+        .listaFooter{
+            flex-direction: column;
+            row-gap: 10px;
+            a{
+                font-size: 1rem;
+                .administradorPeliculas{
+                    padding: 0.5rem 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+
+/*Pagina Detalles*/
+.mainDetalle{
+    .detalle{
+        padding-top:50px;
+        background:linear-gradient(to right top, #2a38567c, #323cc97d),url("../assets/img/arcaBanner.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 75vh;
+        .contenedorDetalle{
+            width:75%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 60px;
+            img{
+              border-radius: 15px;
+            }
+            .textoDetalle{
+                h1{
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                }
+                h2{
+                    margin-top:20px;
+                }
+                h3{
+                    margin-top:20px;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    text-align: left;
+                }
+             
+            }
+        }
+
+    }
+    .trailer{
+        width:70%;
+        display: flex;
+        margin: 0 auto;
+        padding-top:120px;
+        padding-bottom: 100px;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 50px;
+        .contenedorInfo{
+            .redes{
+                margin-bottom: 20px;
+                ul{
+                    list-style: none;
+                    display: flex;
+                    column-gap: 10px;
+                    li{
+                        a{
+                            text-decoration: none;
+                            color: var(--main-color);
+                            font-size: 2.5rem;
+                            margin-right: 60px;
+                        }
+                    }
+                  
+                }
+            }
+            .info{
+                table{
+                    width: 100%;
+                    tr{
+                        td{
+                            font-size: 1.2rem;
+                            padding: 10px 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:1200px){
+    .mainDetalle{
+        .detalle{
+            height: initial;
+            .contenedorDetalle{
+                flex-direction: column;
+                row-gap: 20px;
+                img{
+                    width: 100%;
+                    height: 300px;
+                }
+                .textoDetalle{
+                    h1{
+                        font-size: 1.5rem;
+                    }
+                    h2{
+                        font-size: 1rem;
+                    }
+                    .creditos{
+                        flex-direction: column;
+                        row-gap: 10px;
+                    }
+                }
+            }
+        }
+        .trailer{
+            width:90%;
+            padding-top:40px;
+            padding-bottom: 40px;
+            flex-direction: column;
+            row-gap: 20px;
+            .contenedorTrailer{
+                width: 100%;
+                h2{
+                    margin-bottom: 20px;
+                }
+                iframe{
+                    width: 100%;
+                    height: 300px;
+                }
+            }
+            .contenedorInfo{
+                width: 100%;
+                .redes{
+                    width: 100% ;
+                    ul{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-evenly;
+                        li{
+                            a{
+                                font-size: 2rem;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+                .info{
+                    table{
+                        tr{
+                            td{
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/**/
+/*Pagina Registro e inicio Sesion*/
+.body_Registro_Sesion{
+    height: 100vh;
+    background:linear-gradient(to right top, #24242473,#24242473),url("../assets/img/Toy\ Store.jpg");
+    background-size: cover;
+    background-position: center;
+    .header_Registro_Sesion{
+        color:var(--main-color);
+        height: 8vh;
+        padding:30px;
+        .anclaLogo{
+            text-decoration: none;
+            color: var(--main-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            &:hover{
+                animation: tilt-n-move-shaking 0.25s infinite;
+            }
+            
+        }
+    }
+
+    .registro_Sesion{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .form-content{
+        width: 100%;
+        max-width: 450px;
+        background-color: var(--third-color);
+        padding: 40px 60px 70px;
+        text-align: center;
+        border-radius: 25px;
+    }
+    .form-content h1{
+        font-size: 30px;
+        margin-bottom: 50px;
+        color: var(--main-color);
+        position: relative;
+    }
+    .form-content h1::after{
+        content: '';
+        width: 80px;
+        height: 4px;
+        border-radius: 3px;
+        background: #007aff;
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .input-field{
+        background-color: #515966;
+        margin: 15px 0;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        transition: max-heigth 0.5s;
+        overflow: hidden;
+    }
+    input:not(.check), select{
+        width: 100%;
+        background: transparent;
+        border: 0;
+        outline: none;
+        padding: 18px 15px;
+        color: var(--main-color);
+    }
+    input::placeholder{
+        color: var(--main-color);
+    }
+    .input-field i{
+        margin-left: 15px;
+        color: #007aff;
+    }
+    
+    .input-field select{
+        background-color: #515966;
+    }
+    
+    .terminos{
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        .textoCheck{
+            margin-left: 10px;
+            color: var(--main-color);
+        }
+    }
+    form p{
+        color: var(--main-color);
+        text-align: left;
+        font-size: 13px;
+    }
+    form p a{
+        color: #007aff;
+        margin-left: 5px;
+    }
+    .btn-field{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn-field button{
+        flex-basis: 48%;
+        font-size: 16px;
+        background-color: #007aff;
+        color: var(--main-color);
+        height: 40px;
+        border-radius: 10px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        transition: background 1s;
+        &:hover {
+            background-color: #0b1021;
+            transform: scale(0.95);
+            box-shadow: 0 0 10px rgba(108,212,192,0.75);
+        }
+    }
+    .input-group{
+        height: 330px;
+    }
+    .ayuda{
+        color: #007aff;
+        text-align: right;
+        margin-top: 20px;
+        font-size: 15px;
+    }
+    /*.btn-field button.disable{
+        background-color: #EAEAEA;
+        color: #2C2F35;
+    }*/
+    
+}
