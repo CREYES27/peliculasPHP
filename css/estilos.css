@@ -626,7 +626,7 @@ header{
     }
 
     .registro_Sesion{
-        width: 95%;
+        width: 100%;
         height: 90vh;
         display: flex;
         align-items: center;
