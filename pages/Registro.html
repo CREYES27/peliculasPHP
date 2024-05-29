@@ -18,25 +18,31 @@
         </header>
         <main id="main" class="animate__animated animate__flip">
         <section class="registro_Sesion">
-            <form class="form-content">
-                <h2 class="titulo_Registro_Sesion">Registro</h2>
+            <form class="form-content" id="loginForm" >
+                <h2 class="titulo_Registro_Sesion" id="titulo">Registro</h2>
 
                 <div class="input-group">
                     <div class="input-field" id="nameInput">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Nombre" required="">
+                        <input type="text" class="form-input" autocomplete="off" id="user"  placeholder="Nombre" required="">
                     </div>
-                    <div  class="input-field">
+                    <div id="usernameError" class="input-field error-message"></div>
+
+                    <div  class="input-field" id="emailInput">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Email" required="">
+                        <input type="email" class="form-input" autocomplete="off" id="email_input" placeholder="Email" required="">
                     </div>
-                    <div  class="input-field">
+                    <div id="emailError" class="input-field error-message"></div>
+
+                    <div  class="input-field" id="passwordInput">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Contraseña" required="">
+                        <input type="password" class="form-input" id="password" placeholder="Contraseña" required="">
                     </div>
-                    <div class="input-field">
+                    <div id="passwordError" class="input-field error-message"></div>
+                    
+                    <div class="input-field" id="paisInput">
                         <i class="fa fa-flag fa-stack-lg fa-inverse"></i>
-                        <select name="pais">
+                        <select name="pais" id="pais">
                             <option value="">País</option>
                             <option value="AR">Argentina</option>
                             <option value="BR">Brasil</option>
@@ -46,18 +52,22 @@
                             <option value="VE">Venezuela</option>
                         </select>
                     </div>
-                    <div class="terminos">
-                        <input class="check" type="checkbox">
+                    <div id="paisError" class="input-field error-message"></div>
+
+                    <div class="terminos" id="terminosInput">
+                        <input class="check" type="checkbox" id="terminos">
                         <label class="textoCheck" for="terminos">Acepto términos y condiciones</label>
                     </div>
                     <p>Olvidaste tu contraseña ? <a href="#">Click aqui</a></p>
                 </div>
                 <div class="btn-field">
                     <button id="signUp" type="submit">Registrarse</button>
+                    <!--<button id="signIn" type="submit" class="disable">Login</button>-->
                 </div>
             </form>
         </section>
         </main>
 
+        <script src="../js/registro_sesion.js" ></script>
     </body>
 </html>

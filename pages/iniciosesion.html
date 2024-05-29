@@ -19,18 +19,21 @@
     </header>
     <main id="main" class="animate__animated animate__flipInX">
         <section class="registro_Sesion">
-            <form action="" method="get" class="form-content">
+            <form action="" method="get" class="form-content" id="sesionForm">
                 <h2 class="titulo_Registro_Sesion">Iniciar Sesion</h2>
-    
-                    <div  class="input-field">
+
+                    <div  class="input-field" id="emailInput">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Email" required="" name="email">
+                        <input type="email" class="form-input" autocomplete="off" id="email_input" placeholder="Email" required="">
                     </div>
-                    <div  class="input-field">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Contraseña" required="" name="password">
-                    </div>
+                    <div id="emailError" class="input-field error-message"></div>
                     
+                    <div  class="input-field" id="passwordInput">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" class="form-input" id="password" placeholder="Contraseña" required=""> <!--name="password"-->
+                    </div>
+                    <div id="passwordError" class="input-field error-message"></div>
+
                 </div>
                 <div class="btn-field">
                     <!--<input class="boton" type="submit" value="Iniciar Sesión">-->
@@ -42,6 +45,7 @@
             </form>
         </section>
     </main>
-
+    
+    <script src="../js/registro_sesion.js" ></script>
 </body>
 </html>
