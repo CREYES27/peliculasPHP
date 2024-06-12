@@ -18,8 +18,8 @@
                 <span>Volver</span>
             </a>
             <ul class="listaNav">
-                <li><a class="Estrenos" href="#adminPeliculas">Películas</a></li>
-                <li><a class="Series" href="#adminSeries">Series</a></li>
+                <li><a class="Estrenos" onclick="adminPeliculas()">Películas</a></li>
+                <li><a class="Series" onclick="adminSeries()">Series</a></li>
             </ul>
         </nav>
     </header>
@@ -182,5 +182,23 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const peliculas = document.getElementById('adminPeliculas');
+        const series = document.getElementById('adminSeries');
+
+        function adminPeliculas(){
+            peliculas.style.display = 'block';
+            series.style.display = 'none';
+        }
+
+        function adminSeries(){
+            peliculas.style.display = 'none';
+            series.style.display = 'block';
+        }
+
+        peliculas.style.display = 'block';
+        series.style.display = 'none';
+    </script>
 </body>
 </html>
