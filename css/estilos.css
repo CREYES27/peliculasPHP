@@ -805,3 +805,121 @@ header{
     
     
 }
+
+/* Estilos del administrador */
+#mainAdmin{
+    text-align: center;
+    padding: 3rem;
+
+    .divAdmin{
+        background-color: var(--third-color);
+        color: var(--main-color);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+
+        h2{
+            margin-top: 2rem;
+        }
+
+        table{
+            color: var(--main-color);
+            margin: 1rem auto 2rem auto ;
+            width: 100%;
+            thead{
+                tr{
+                    th{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    font-size: 1rem;
+                    padding: 10px 0px;
+                    text-align: center;
+                    td{
+                        padding: 10px 0px;
+                    }
+                    .tdGenero{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 0.2rem;
+
+                        span{
+                            font-size: 0.8rem;
+                            color: var(--third-color);
+                            background-color: var(--main-color);
+                            padding: 0.2rem 0.5rem;
+                            border-radius: 0.5rem;
+                        }
+                    }
+                }
+                
+                button{
+                    font-size: 1rem;
+                    padding: 0.4rem;
+                    border-radius: 0.3rem;
+                    min-width: 4rem;
+                    cursor: pointer;
+                    transition: ease-in-out 0.3s;
+                    &:hover {
+                        transform: scale(0.90);
+                    }
+                }
+                button.btnEditar{
+                    background-color: rgb(70, 194, 70);
+                    color: var(--secondary-color);
+                }
+                button.btnBorrar{
+                    background-color: rgb(194, 70, 70);
+                    color: var(--secondary-color);
+                }
+            }
+        }
+
+        form{
+            width: 100%;
+            margin: 1rem auto 2rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            label{
+                font-size: 1.2rem;
+                color: var(--main-color);
+            }
+            input, select{
+                width: 60%;
+                height: 3rem;
+                padding: 0.5rem;
+                border-radius: 0.3rem;
+                border: 1px solid var(--main-color);
+
+                font-size: 0.9rem;
+                outline: none;
+                &:focus{
+                    border: 1px solid var(--secondary-color);
+                }
+                &:hover{
+                    border: 1px solid var(--secondary-color);
+                }
+            }
+            button{
+                margin-top: 2rem;
+                font-size: 1rem;
+                padding: 0.4rem;
+                border-radius: 0.3rem;
+                min-width: 4rem;
+                cursor: pointer;
+                transition: ease-in-out 0.3s;
+                &:hover {
+                    transform: scale(0.90);
+                }
+            }
+        }
+    }
+}

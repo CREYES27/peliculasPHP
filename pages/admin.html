@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="titulo_detalle">Administrador</title>
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/cbbd236219.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        
+    </head>
+<body>
+    <header id="header_std">
+        <nav>
+            <a class="btnVolver" href="../index.html">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>Volver</span>
+            </a>
+            <ul class="listaNav">
+                <li><a class="Estrenos" onclick="adminPeliculas()">Películas</a></li>
+                <li><a class="Series" onclick="adminSeries()">Series</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="mainAdmin" id="mainAdmin">
+        <div id="adminPeliculas" class="divAdmin">
+            <h2>Listado de películas</h2>
+            <div id="listadoPeliculas">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Película</th>
+                            <th>Título</th>
+                            <th>Sinopsis</th>
+                            <th>Duración (min)</th>
+                            <th>Año</th>
+                            <th>Director</th>
+                            <th>Género</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Ejemplo Título</td>
+                                <td>Ejemplo Sinopsis</td>
+                                <td>Ejemplo Duración</td>
+                                <td>Ejemplo Año</td>
+                                <td>Ejemplo Director</td>
+                                <td class="tdGenero">
+                                    <span>Ejemplo Género</span>
+                                    <span>Ejemplo Otro Género</span>
+                                </td>
+                                <td>
+                                    <button type="button" (click)="" class="btnEditar">Editar</button>
+                                    <button type="button" (click)="" class="btnBorrar">Borrar</button>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="agregarPelicula">
+                <h2>Agregar una película</h2>
+                <form id="formAgregarPelicula">
+                    <label for="id_pelicula">ID: </label>
+                    <input type="number" id="id_pelicula" name="id_pelicula" required><br>
+    
+                    <label for="titulo_pelicula">Título: </label>
+                    <input type="text" id="titulo_pelicula" name="titulo_pelicula" required><br>    
+    
+                    <label for="sinopsis_pelicula">Sinopsis: </label>
+                    <input type="number" id="sinopsis_pelicula" name="sinopsis_pelicula" required><br>
+    
+                    <label for="duracion_pelicula">Duración: </label>
+                    <input type="number" id="duracion_pelicula" name="duracion_pelicula" required><br>
+    
+                    <label for="anio_pelicula">Año: </label>
+                    <input type="date" id="anio_pelicula" name="anio_pelicula" required><br>
+    
+                    <label for="director_pelicula">Director: </label>
+                    <input type="text" id="director_pelicula" name="director_pelicula" required><br>
+                    
+                    <label for="id_genero_pelicula">Género: </label>
+                    <select name="id_genero_pelicula" id="id_genero_pelicula">
+                        <option value="1">Acción</option>
+                        <option value="2">Animación</option>
+                        <option value="3">Aventura</option>
+                        <option value="4">Bélica</option>
+                        <option value="5">Ciencia ficción</option>
+                        <option value="6">Comedia</option>
+                        <option value="7">Crimen</option>
+                        <option value="8">Documental</option>
+                        <option value="9">Drama</option>
+                        <option value="10">Familia</option>
+                        <option value="11">Fantasía</option>
+                        <option value="12">Historia</option>
+                        <option value="13">Misterio</option>
+                        <option value="14">Música</option>
+                        <option value="15">Película de TV</option>
+                        <option value="16">Romance</option>
+                        <option value="17">Suspense</option>
+                        <option value="18">Terror</option>
+                        <option value="19">Western</option>
+                    </select>
+    
+                    <button type="submit" (click)="">Agregar</button>
+                </form>
+            </div>
+        </div>
+        <div id="adminSeries" class="divAdmin">
+            <h2>Listado de series</h2>
+            <div id="listadoSeries">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Serie</th>
+                            <th>Título</th>
+                            <th>Sinopsis</th>
+                            <th>Duración (min)</th>
+                            <th>Año</th>
+                            <th>Director</th>
+                            <th>Género</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <th>1</th>
+                                <td>Ejemplo Título</td>
+                                <td>Ejemplo Sinopsis</td>
+                                <td>Ejemplo Duración</td>
+                                <td>Ejemplo Año</td>
+                                <td>Ejemplo Director</td>
+                                <td class="tdGenero">
+                                    <span>Ejemplo Género</span>
+                                    <span>Ejemplo Otro Género</span>
+                                </td>
+                                <td>
+                                    <button type="button" (click)="" class="btnEditar">Editar</button>
+                                    <button type="button" (click)="" class="btnBorrar">Borrar</button>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="agregarSerie">
+                <h2>Agregar una serie</h2>
+                <form id="formAgregarSerie">
+                    <label for="id_serie">ID: </label>
+                    <input type="number" id="id_serie" name="id" required><br>
+    
+                    <label for="titulo_serie">Título: </label>
+                    <input type="text" id="titulo_serie" name="titulo_serie" required><br>    
+    
+                    <label for="sinopsis_serie">Sinopsis: </label>
+                    <input type="number" id="sinopsis_serie" name="sinopsis_serie" required><br>
+    
+                    <label for="duracion_serie">Duración: </label>
+                    <input type="number" id="duracion_serie" name="duracion_serie" required><br>
+    
+                    <label for="anio_serie">Año: </label>
+                    <input type="date" id="anio_serie" name="anio_serie" required><br>
+    
+                    <label for="director_serie">Director: </label>
+                    <input type="text" id="director_serie" name="director_serie" required><br>
+                    
+                    <label for="id_genero_serie">Género: </label>
+                    <select name="id_genero_serie" id="id_genero_serie">
+                        <option value="1">Action & Adventure</option>
+                        <option value="2">Animación</option>
+                        <option value="3">Comedia</option>
+                        <option value="4">Crimen</option>
+                        <option value="5">Documental</option>
+                        <option value="6">Drama</option>
+                        <option value="7">Familia</option>
+                        <option value="8">Kids</option>
+                        <option value="9">Misterio</option>
+                        <option value="10">News</option>
+                        <option value="11">Reality</option>
+                        <option value="12">Sci-Fi & Fantasy</option>
+                        <option value="13">Soap</option>
+                        <option value="14">Talk</option>
+                        <option value="15">War & Politics</option>
+                        <option value="16">Western</option>
+                    </select>
+    
+                    <button type="submit" (click)="">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const peliculas = document.getElementById('adminPeliculas');
+        const series = document.getElementById('adminSeries');
+
+        function adminPeliculas(){
+            peliculas.style.display = 'block';
+            series.style.display = 'none';
+        }
+
+        function adminSeries(){
+            peliculas.style.display = 'none';
+            series.style.display = 'block';
+        }
+
+        peliculas.style.display = 'block';
+        series.style.display = 'none';
+    </script>
+</body>
+</html>
