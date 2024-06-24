@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 
 
-//crear y llenar tabla trailer (falta terminar de desarrollar)
+//crear y llenar tabla trailer 
 
 function addTable() {
     let myTableDiv = document.getElementById("info")

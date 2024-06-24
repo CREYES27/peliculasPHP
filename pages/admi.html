@@ -1,0 +1,147 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="titulo_Adm">Administrador</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/cbbd236219.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+</head>
+<body>
+    <header class="" id="header_std">
+        <!-- viene del index.js-->
+        <!--<nav>
+            <a class="anclaLogo" href="../index.html">
+               <i class="fas fa-film" aria-hidden="true"></i>
+               <span>CodoFilms</span>
+            </a>
+            <ul class="listaNav">
+              <li><a class="Estrenos" href="../index#tendencias">Estrenos</a></li>
+              <li><a class="Series" href="../index#tendencias">Series</a></li>
+              <li><a class="registro" href="./Registro.html">Registrarse</a></li>
+              <li><a class="iniciarSesion" href="./iniciosesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>-->
+    </header>
+    <main class="mainAdmin" id="mainAdm">
+      <section class="AdminGestion" id="sectionAdmiGestion">
+        <h2>Administración del Portal</h2>
+        <form class="row" method="post" enctype="multipart/form-data" id="admiForm">
+          <div class="form first">
+            <div class="Detalle del Films">
+              <span class="title">Agregar Película</span>
+              <div class="fields">
+                <div class="input_field_60">
+                  <label>Titulo</label>
+                  <input type="text" class="form-input" placeholder="Nombre del Films" name="titulo" id="titulo">
+                  <div id="tituloError" class="input-field error-message "></div>
+                </div>
+                
+                <div class="input_field">
+                  <label>Genero</label>
+                  <select name="id_genero_pelicula" id="id_genero_pelicula">
+                    <script language="javascript">
+                      let genero = new Array("Acción", "Animación", "Aventura", "Bélica", "Ciencia ficción2", "Comedia", "Crimen", "Documental", "Drama", "Familia", "Fantasía",
+                      "Historia", "Misterio", "Música", "Película de TV", "Romance", "Suspenso", "Terror", "Western");
+                      for (let i = 0; i < genero.length; i++) {
+                        document.write("<option value=\""+genero[i]+"\">"+genero[i]+"</option>");
+                      }
+                    </script>
+                  </select>
+                </div>
+
+                <div class="input_field">
+                  <label>Año</label>
+                  <input type="date" class="form-input" placeholder="Fecha de emision del Films" name="emision" id="emision">
+                  <div id="emisionError" class="input-field error-message"></div>
+                </div>
+
+                <div class="input_field">
+                  <label>Duración</label>
+                  <input type="text" class="form-input" placeholder="Tiempo del Films (h min)" name="duracion" id="duracion">
+                  <div id="duracionError" class="input-field error-message"></div>
+                </div>
+                
+                <div class="input_field">
+                  <label>Director</label>
+                  <input type="text" class="form-input" placeholder="Dirección del Films" name="direccion" id="direccion">
+                  <div id="direccionError" class="input-field error-message"></div>
+                </div>
+                
+                <div class="input_field_100" cols="30" rows="3">
+                  <label for="sinopsis_pelicula">Sinopsis: </label>
+                  <textarea class="form-input" name="sinopsis" id="sinopsis"></textarea>
+                  <div id="sinopsisError" class="input-field error-message"></div>
+                </div>
+                
+                <div col-12 col-md-6>
+                  <label for="imagen">Imagen</label>
+                  <input class="form-control" type="file" name="imagen" id="imagen">
+                  <div id="imagenError" class="input-field error-message"></div>
+                </div>
+                
+                <button type="submit">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </section>
+
+    <hr>
+
+      <section data-aos="fade-up" data-aos-delay="200" class="container mt-4">
+        <div class="contenedorListado" id="listado">
+            <h2>Listado de películas</h2>
+            <div id="listadoPeliculas">
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr class="listado">
+                            <th scope="col">ID</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Género</th>
+                            <th scope="col">Duración (min)</th>
+                            <!--<th scope="col">Año</th>
+                            <th scope="col">Director</th>-->
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><img src="../assets/img/Elduro.jpg" width="120px" class="rounded mx-auto d-block" alt="El Duro"></td>
+                            <td>El Duro</td>
+                            <td>
+                                <span>Acción</span>
+                            </td>
+                            <td>2h 35min</td>
+                            <!--<td>2024</td>
+                            <td>Director</td>-->   
+                            <td>
+                                <button type="button" (click)="" class="btnEditar">Editar</button>
+                                <button type="button" (click)="" class="btnBorrar">Borrar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+      </section>
+
+    </main>
+    <footer class="footer" id="footer_std">
+        <!-- viene del index.js-->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+    AOS.init();
+    </script>
+
+</body></html>
