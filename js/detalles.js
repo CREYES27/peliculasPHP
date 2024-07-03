@@ -1,6 +1,6 @@
 'use strict';
 
-//Detalles Pelicula
+//Detalles Pelicula (Modificar para traer los datos desde la Api BD nuestra)
 const detallePelicula = [
     {imagen: 'arca.jpg', titulo: 'El Arca de Noé', duracion: '1h 36min - Géneros: Animación, Fantasía, Comedia, Musical',
         sinopsis: 'La película sigue a dos ratones: Vini (un carismático poeta con un terrible miedo escénico) y Tom (un talentoso y encantador guitarrista). Cuando llega el diluvio, solo se permite que un macho y una hembra de cada especie suban a El Arca de Noé. Con la ayuda de una ingeniosa cucaracha y buena suerte, los roedores se cuelan en el arca y juntos intentarán evitar el enfrentamiento entre carnívoros y herbívoros. ¿Podrán estos talentosos polizones usar la música para romper la tensión y ayudar a todas las especies a convivir sin comerse unos a otros durante 40 días y 40 noches?',
@@ -48,7 +48,6 @@ function crearDetallePelicula(detalle){
 
     //agrego los elementos al detalle de pelicula
     
-    //detalle.appendChild(titulo, duracion, cardBody, sinopsis);
     detalles.appendChild(titulo);
     detalles.appendChild(duracion);
     detalles.appendChild(cardBody);
@@ -100,6 +99,7 @@ function addTable() {
     heading[0] = "Info"
     heading[1] = ""
    
+    //Modificar para traer los datos desde la Api BD nuestra ***************
     let fila = new Array()
     fila[0] = new Array("Titulo Original", "Noah's Ark")
     fila[1] = new Array("Guión", "Sergio Machado")

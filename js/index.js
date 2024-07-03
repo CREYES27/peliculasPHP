@@ -35,7 +35,7 @@ let foot = `
         <li><a href="">Términos y condiciones</a></li>
         <li><a href="">Preguntas frecuentes</a></li>
         <li><a href="">Ayuda</a></li>
-        <li><a class="administradorPeliculas" href="./pages/admi.html" onclick="adminMenu()">Administrador Peliculas</a></li>
+        <li><a class="administradorPeliculas" href="./pages/admi.html">Administrador Peliculas</a></li>
     </ul>
 </nav>
 <a class="arriba" href="#main">
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () =>{
    let enlace3 = document.querySelector('.registro');
    let enlace4 = document.querySelector('.iniciarSesion');
    let admon = document.querySelector('.administradorPeliculas');
+
    const menu = document.getElementById('admiMenu');
 
     if (document.getElementById("titulo_detalle")!=null) {
@@ -89,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 });
 
-//Galeria Estrenos y Series
+//Galeria Estrenos y Series (Modificar para traer los datos desde la Api BD nuestra)
 const imagenEstrenos = [
     {imagen: 'Elduro.jpg', titulo: 'El Duro'},
     {imagen: 'inmaculada.jpg', titulo: 'Inmaculada'},
@@ -112,7 +113,7 @@ function crearTarjetaPelicula(pelicula){
 
     const cardImg = document.createElement('img');
     cardImg.classList.add('card-img-top');
-    cardImg.src = `assets/img/${pelicula.imagen}`; 
+    cardImg.src = `assets/img/${pelicula.imagen}`;  //agregar el Api de la BD nuestra
     cardImg.alt = pelicula.titulo;
 
     const cardBody = document.createElement('div');
@@ -135,7 +136,7 @@ function crearTarjetaPelicula(pelicula){
 
     return card;
 };
-//---------------------------------------------- aqui bloque de la API
+//---------------------------------------------- Aqui Bloque de la API EXTERNA ----------------------------
 function crearTarjetaApi(pelicula){
     const card = document.createElement('div');
     card.classList.add('col-md4', 'pelicula-card');
@@ -166,7 +167,7 @@ function crearTarjetaApi(pelicula){
 
     return card;
 };
-//datos de la API
+//datos de la API EXTERNA
 const API_SERVER = 'https://api.themoviedb.org/3';
 const options = {
     method: 'GET', //Metodo de la peticion (GET)
@@ -175,7 +176,7 @@ const options = {
         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYTJjYTAwZDYxZWIzOTEyYjZlNzc4MDA4YWQ3ZmNjOCIsInN1YiI6IjYyODJmNmYwMTQ5NTY1MDA2NmI1NjlhYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4MJSPDJhhpbHHJyNYBtH_uCZh4o0e3xGhZpcBIDy-Y8' //token
     }
 };
-//funcion para cargar peliculas en el index seccion API
+//funcion para cargar peliculas en el index seccion API EXTERNA
 const cargarPeliculas = async (page = 1) => {
     try {
         //realiza peticion fech a la API para optener las peliculas populares
@@ -193,7 +194,7 @@ const cargarPeliculas = async (page = 1) => {
         console.error(error);
     } 
 };
-//-------------fin Api
+//-------------fin API EXTERNA-----------------------------------
 
 //Agregar todas las tarjetas en el Dom
 function agregarTarjetasPeliculas(){
@@ -203,7 +204,7 @@ function agregarTarjetasPeliculas(){
     });
 };
 
-//Galeria Valoradas
+//Galeria Valoradas  (Modificar para traer los datos desde la Api Interna BD nuestra)s
 const imagenValoradas = [
     {imagen: 'valoradas_9.jpg'},
     {imagen: 'valoradas_12.jpg'},
