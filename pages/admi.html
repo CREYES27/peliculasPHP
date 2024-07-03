@@ -12,24 +12,14 @@
 </head>
 <body>
     <header class="" id="header_std">
-        <!-- viene del index.js-->
-        <!--<nav>
-            <a class="anclaLogo" href="../index.html">
-               <i class="fas fa-film" aria-hidden="true"></i>
-               <span>CodoFilms</span>
-            </a>
-            <ul class="listaNav">
-              <li><a class="Estrenos" href="../index#tendencias">Estrenos</a></li>
-              <li><a class="Series" href="../index#tendencias">Series</a></li>
-              <li><a class="registro" href="./Registro.html">Registrarse</a></li>
-              <li><a class="iniciarSesion" href="./iniciosesion.html">Iniciar Sesión</a></li>
-            </ul>
-        </nav>-->
+      <!-- viene del index.js-->
     </header>
     <main class="mainAdmin" id="mainAdm">
       <section class="AdminGestion" id="sectionAdmiGestion">
         <h2>Administración del Portal</h2>
-        <form class="row" method="post" enctype="multipart/form-data" id="admiForm">
+
+        <!-- Formulario para añadir y editar películas -->
+        <form id="admiForm" class="row" method="post" enctype="multipart/form-data">
           <div class="form first">
             <div class="Detalle del Films">
               <span class="title">Agregar Película</span>
@@ -109,7 +99,7 @@
                             <th scope="col">Opciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="bodyTablePeliculas">
                         <tr>
                             <th scope="row">1</th>
                             <td><img src="../assets/img/Elduro.jpg" width="120px" class="rounded mx-auto d-block" alt="El Duro"></td>
@@ -121,7 +111,7 @@
                             <!--<td>2024</td>
                             <td>Director</td>-->   
                             <td>
-                                <button type="button" (click)="" class="btnEditar">Editar</button>
+                                <button type="button" (click)="editarPelicula()" class="btnEditar">Editar</button>
                                 <button type="button" (click)="" class="btnBorrar">Borrar</button>
                             </td>
                         </tr>
@@ -140,6 +130,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="../js/index.js"></script>
     <script src="../js/admin.js"></script>
+    <script src="../js/app.js"></script>
     <script>
     AOS.init();
     </script>
