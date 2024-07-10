@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () =>{
    let admon = document.querySelector('.administradorPeliculas');
 
    const menu = document.getElementById('admiMenu');
+   const sesion = document.getElementById('adm').style.display = 'none';
 
     if (document.getElementById("titulo_detalle")!=null) {
         ancla.href = "../index.html";

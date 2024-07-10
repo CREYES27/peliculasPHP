@@ -18,25 +18,25 @@
         <main id="main" class="animate__animated animate__flip">
         <section class="registro_Sesion">
             <!-- la validacion viene de registro_sesion.js-->
-            <form class="form-content" id="loginForm" >
+            <form action="" method="post" class="form-content" id="loginForm" >
                 <h2 class="titulo_Registro_Sesion" id="titulo">Registro</h2>
 
                 <div class="input-group">
                     <div class="input-field" id="nameInput">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" class="form-input" autocomplete="off" id="user"  placeholder="Nombre">
+                        <input type="text" class="form-input" autocomplete="off" id="user"  placeholder="Nombre" name="nombre">
                     </div>
                     <div id="usernameError" class="input-field error-message"></div>
 
                     <div  class="input-field" id="emailInput">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" class="form-input" autocomplete="off" id="email_input" placeholder="Email">
+                        <input type="email" class="form-input" autocomplete="off" id="email_input" placeholder="Email" name="email">
                     </div>
                     <div id="emailError" class="input-field error-message"></div>
 
                     <div  class="input-field" id="passwordInput">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" class="form-input" id="password" placeholder="Contraseña">
+                        <input type="password" class="form-input" id="password" placeholder="Contraseña" name="clave">
                     </div>
                     <div id="passwordError" class="input-field error-message"></div>
                     
@@ -55,7 +55,7 @@
                     <div id="paisError" class="input-field error-message"></div>
 
                     <div class="terminos" id="terminosInput">
-                        <input class="check" type="checkbox" id="terminos">
+                        <input class="check" type="checkbox" id="terminos" name="terminos">
                         <label class="textoCheck" for="terminos">Acepto términos y condiciones</label>
                     </div>
                     <p>Olvidaste tu contraseña ? <a href="#">Click aqui</a></p>
@@ -67,7 +67,7 @@
             </form>
         </section>
         </main>
-
-        <script src="../js/registro_sesion.js" ></script>
+        <!--<script src="../js/registro_sesion.js" ></script>-->
+        <script src="../js/registraUsuario.js" ></script>
     </body>
 </html>
