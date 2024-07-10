@@ -35,7 +35,7 @@ let foot = `
         <li><a href="">Términos y condiciones</a></li>
         <li><a href="">Preguntas frecuentes</a></li>
         <li><a href="">Ayuda</a></li>
-        <li><a class="administradorPeliculas" href="./pages/admi.html">Administrador Peliculas</a></li>
+        <li><a class="administradorPeliculas" href="./pages/admi.html" id="adm">Administrador Peliculas</a></li>
     </ul>
 </nav>
 <a class="arriba" href="#main">

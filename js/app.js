@@ -1,5 +1,5 @@
 // TODO: cambiar por url de la api de nuestro proyecto
-const APIURL = '';
+const APIURL = 'http://localhost/PHP/CodoFilms/Api/peliculas';
 
 // Obtener todas las películas
 async function getPeliculas(){

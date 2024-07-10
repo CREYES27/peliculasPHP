@@ -2,44 +2,67 @@
 //Cuando el Dom este cargando, llama a la funcion para agregar el detalle
 document.addEventListener("DOMContentLoaded", async () => {
     const formulario = document.getElementById('admiForm');
-    const tbody = document.getElementById('bodyTablePeliculas');
+    //const tbody = document.getElementById('bodyTablePeliculas');
 
-    const peliculas = await getPeliculas();
-    peliculas.forEach(pelicula => {
+    const options = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+    const response = await fetch('http://localhost/PHP/CodoFilms/Api/peliculas', options);
+    const data = await response.json();
+    console.log(data);
+    const movies = data;
+    const tbody = document.getElementById('bodyTablePeliculas');
+    // recorremos todas las peliculas
+    movies.forEach(movie => {
+
         const tr = document.createElement('tr');
+        const tdId = document.createElement('td');
+        tdId.textContent = movie.id_pelicula;
         const tdTitle = document.createElement('td');
-        tdTitle.textContent = pelicula.titulo;
+        tdTitle.textContent = movie.titulo;
         const tdDuration = document.createElement('td');
-        tdDuration.textContent = pelicula.duracion;
-        const tdGenres = document.createElement('td');
-        tdGenres.textContent = pelicula.genero;
+        tdDuration.textContent = movie.duracion;
+        const tdGenero = document.createElement('td');
+        tdGenero.textContent = movie.genero;
         const tdImage = document.createElement('td');
-        
         const img = document.createElement('img');
-        img.src = "../assets/img/" + pelicula.imagen;
+        img.src = "../assets/img/" + movie.imagen;
         img.width = '150';
-        img.alt = pelicula.titulo;
+        img.alt = movie.titulo;
         tdImage.appendChild(img);
         img.classList.add('img-fluid');
         img.classList.add('img-thumbnail');
 
-        const tdBtn = document.createElement('td');
+        // Botones de mantenimiento
+        const tdBorrar = document.createElement('td');
+        const btnBorrar = document.createElement('button');
+        btnBorrar.type="button";
+        btnBorrar.click="";
+        btnBorrar.classList.add('btnBorrar');
+        btnBorrar.textContent = "Borrar";
+        tdBorrar.appendChild(btnBorrar);
+        const tdEditar = document.createElement('td');
         const btnEditar = document.createElement('button');
-        btnEditar.click(editarPelicula(pelicula.id));
-        tdBtn.appendChild(btnEditar);
-        
-        const btnEliminar = document.createElement('button');
-        btnEliminar.click(borrarPelicula(pelicula.id));
-        tdBtn.appendChild(btnEliminar);
+        btnEditar.type="button";
+        btnEditar.classList.add('btnEditar');
+        btnEditar.click="";
+        btnEditar.textContent = "Editar";
+        tdEditar.appendChild(btnEditar);
 
-        tr.appendChild(tdTitle);
-        tr.appendChild(tdDuration);
-        tr.appendChild(tdGenres);
+        tr.appendChild(tdId);
         tr.appendChild(tdImage);
-        tr.appendChild(tdBtn);
-
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdGenero);
+        tr.appendChild(tdDuration);
+        tr.appendChild(tdEditar);
+        tr.appendChild(tdBorrar);
         tbody.appendChild(tr);
+
     });
+
 
     formulario.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -48,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = new FormData(formulario);
         const dataPelicula = {
             titulo: data.get('titulo'),
-            genero: data.get('id_genero_pelicula'),
+            genero: data.get('id_genero'),
             fechaEstreno: data.get('emision'),
             duracion: data.get('duracion'),
             director: data.get('direccion'),
@@ -74,22 +97,23 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         });
     });
+
 });
 
-// Función para editar película
+// Función para editar película*********************************************
 async function editarPelicula(movieId) {
     const pelicula = await getPeliculaPorID(movieId);
     
     const data = new FormData();
     data.append('titulo', pelicula.titulo);
-    data.append('id_genero_pelicula', pelicula.id_genero_pelicula);
+    data.append('id_genero', pelicula.id_genero);
     data.append('emision', pelicula.emision);
     data.append('duracion', pelicula.duracion);
     data.append('direccion', pelicula.direccion);
     data.append('sinopsis', pelicula.sinopsis);
     
     $('#titulo').val(data.get('titulo'));
-    $('#id_genero_pelicula').val(data.get('id_genero_pelicula'));
+    $('#id_genero').val(data.get('id_genero'));
     $('#emision').val(data.get('emision'));
     $('#duracion').val(data.get('duracion'));
     $('#direccion').val(data.get('direccion'));
@@ -101,7 +125,7 @@ async function editarPelicula(movieId) {
         
         const editedMovieData = {
             titulo: $('#titulo').val(),
-            id_genero_pelicula: $('#id_genero_pelicula').val(),
+            id_genero: $('#id_genero').val(),
             emision: $('#emision').val(),
             duracion: $('#duracion').val(),
             direccion: $('#direccion').val(),
