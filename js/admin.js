@@ -2,71 +2,10 @@
 //Cuando el Dom este cargando, llama a la funcion para agregar el detalle
 document.addEventListener("DOMContentLoaded", async () => {
     const formulario = document.getElementById('admiForm');
-    //const tbody = document.getElementById('bodyTablePeliculas');
-
-    const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    };
-    const response = await fetch('http://localhost/PHP/CodoFilms/Api/peliculas', options);
-    const data = await response.json();
-    console.log(data);
-    const movies = data;
-    const tbody = document.getElementById('bodyTablePeliculas');
-    // recorremos todas las peliculas
-    movies.forEach(movie => {
-
-        const tr = document.createElement('tr');
-        const tdId = document.createElement('td');
-        tdId.textContent = movie.id_pelicula;
-        const tdTitle = document.createElement('td');
-        tdTitle.textContent = movie.titulo;
-        const tdDuration = document.createElement('td');
-        tdDuration.textContent = movie.duracion;
-        const tdGenero = document.createElement('td');
-        tdGenero.textContent = movie.genero;
-        const tdImage = document.createElement('td');
-        const img = document.createElement('img');
-        img.src = "../assets/img/" + movie.imagen;
-        img.width = '150';
-        img.alt = movie.titulo;
-        tdImage.appendChild(img);
-        img.classList.add('img-fluid');
-        img.classList.add('img-thumbnail');
-
-        // Botones de mantenimiento
-        const tdBorrar = document.createElement('td');
-        const btnBorrar = document.createElement('button');
-        btnBorrar.type="button";
-        btnBorrar.click="";
-        btnBorrar.classList.add('btnBorrar');
-        btnBorrar.textContent = "Borrar";
-        tdBorrar.appendChild(btnBorrar);
-        const tdEditar = document.createElement('td');
-        const btnEditar = document.createElement('button');
-        btnEditar.type="button";
-        btnEditar.classList.add('btnEditar');
-        btnEditar.click="";
-        btnEditar.textContent = "Editar";
-        tdEditar.appendChild(btnEditar);
-
-        tr.appendChild(tdId);
-        tr.appendChild(tdImage);
-        tr.appendChild(tdTitle);
-        tr.appendChild(tdGenero);
-        tr.appendChild(tdDuration);
-        tr.appendChild(tdEditar);
-        tr.appendChild(tdBorrar);
-        tbody.appendChild(tr);
-
-    });
-
-
+   
     formulario.addEventListener("submit", async (event) => {
         event.preventDefault();
-        validarCampos();
+        //validarCampos();
 
         const data = new FormData(formulario);
         const dataPelicula = {
