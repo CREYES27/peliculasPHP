@@ -35,7 +35,7 @@
                   <label>Genero</label>
                   <select name="id_genero_pelicula" id="id_genero_pelicula">
                     <script language="javascript">
-                      let genero = new Array("Acción", "Animación", "Aventura", "Bélica", "Ciencia ficción2", "Comedia", "Crimen", "Documental", "Drama", "Familia", "Fantasía",
+                      let genero = new Array("Acción", "Animación", "Aventura", "Bélica", "Ciencia ficción", "Comedia", "Crimen", "Documental", "Drama", "Familia", "Fantasía",
                       "Historia", "Misterio", "Música", "Película de TV", "Romance", "Suspenso", "Terror", "Western");
                       for (let i = 0; i < genero.length; i++) {
                         document.write("<option value=\""+genero[i]+"\">"+genero[i]+"</option>");
@@ -46,7 +46,7 @@
 
                 <div class="input_field">
                   <label>Año</label>
-                  <input type="date" class="form-input" placeholder="Fecha de emision del Films" name="emision" id="emision">
+                  <input type="number" class="form-input" placeholder="Año de emision del Films" name="emision" id="emision">
                   <div id="emisionError" class="input-field error-message"></div>
                 </div>
 

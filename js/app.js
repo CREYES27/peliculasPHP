@@ -64,52 +64,50 @@ document.addEventListener("DOMContentLoaded", async () => {
     //*******Actualiza (edita o Modifica) ****************************
 
     console.log(document.querySelectorAll('.btnEditar'));
-    // Agregar eventos después de crear los botones
     document.querySelectorAll('.btnEditar').forEach(button => {
       
         button.addEventListener('click', async (event) => {
             console.log("hizo click");
             console.log(event);
-            console.log(event.target);// etiqueta de html del button que presiono 
+            console.log(event.target); 
             const row = event.target.closest('tr');
             console.log(row);
-            const peliculaId = row.querySelector('td:first-child').innerText.trim();// de la fila levanto el id de la pelicula por su clase, por un selector de hijo primero
+            const peliculaId = row.querySelector('td:first-child').innerText.trim();
             console.log(peliculaId);
-    try {
-        const response = await fetch(`http://localhost/PHP/CodoFilms/Api/peliculas.php?id=${peliculaId}`);
-        if (!response.ok) {
-            // lanzo una excepcion en caso de que no funcione el fetch, esto se ve en la consola
-            throw new Error('Error al obtener los datos de la película');
-        }
-        const data = await response.json();
-
-        const movieUnica = data[0];
+            try {
+                const response = await fetch(`http://localhost/PHP/CodoFilms/Api/peliculas.php?id=${peliculaId}`);
+                if (!response.ok) {
+                    throw new Error('Error al obtener los datos de la película');
+                }
+                const data = await response.json();
                 console.log(data);
-                // son los id del formulario, como son unicos e irrepetibles dentro del html, sabe a quien insertarles los valores
-                document.getElementById('id').value = movieUnica.id_pelicula;
-                document.getElementById('titulo').value = movieUnica.titulo;
-                document.getElementById('id_genero_pelicula').value = movieUnica.genero;
-                document.getElementById('duracion').value = movieUnica.duracion;
-                document.getElementById('emision').value = movieUnica.emision;
-                document.getElementById('direccion').value = movieUnica.direccion;
-                document.getElementById('sinopsis').value = movieUnica.sinopsis;
-                window.scrollTo(0, 0)
-        //return data;
-    } catch (error) {
-        console.error('Error updating data:', error);
-    }
+                const movieUnica = data[0];
+                    console.log(data);
+                    document.getElementById('id').value = movieUnica.id_pelicula;
+                    document.getElementById('titulo').value = movieUnica.titulo;
+                    document.getElementById('id_genero_pelicula').value = movieUnica.genero;
+                    document.getElementById('duracion').value = movieUnica.duracion;
+                    document.getElementById('emision').value = movieUnica.emision;
+                    document.getElementById('direccion').value = movieUnica.direccion;
+                    document.getElementById('sinopsis').value = movieUnica.sinopsis;
+                    window.scrollTo(0, 0)
+
+            } catch (error) {
+                console.error('Error updating data:', error);
+            }
 
         });
     });
 
 
     //****************BORRAR************/
+    console.log(document.querySelectorAll('.btnborrar'));
     document.querySelectorAll('.btnBorrar').forEach(button => {
         button.addEventListener('click', async (event) => {
             const row = event.target.closest('tr');
             const peliculaId = row.querySelector('td:first-child').innerText.trim();
             try {
-                const response = await fetch(`${APIURL}/peliculas.php/${peliculaId}`, {
+                const response = await fetch(`http://localhost/PHP/CodoFilms/Api/peliculas.php?id=${peliculaId}`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
@@ -119,6 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     alert('Error al Borrar la película');
                     throw new Error('Error Borrando película');
                 }
+
                 const data = await response.json();
                 alert('Pelicula Borrada correctamente');
                 console.log(data);

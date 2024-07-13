@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        let url = 'http://localhost/PHP/CodoFilms/Api/pelicula.php';
+        let url = 'http://localhost/PHP/CodoFilms/Api/peliculas.php';
         let method = 'POST';
 
         const movieData = {
@@ -47,18 +47,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         try {
             const APIURL = 'http://localhost/PHP/CodoFilms/Api';
             const response = await fetch(`${APIURL}/peliculas`, options);
+            console.log(response);
             if (!response.ok) {
-                throw new Error('Error al guardar la película');
+                throw new Error('Error al guardarr la película');
             }
 
             const responseData = await response.json();
+            console.log(responseData);
             if (method === 'POST') {
                 if (response.status !== 201) {
                     alert('Error al guardar la película');
+                    
                     throw new Error('Error al guardar la película');
                     
                 }
                 alert('Película agregada correctamente');
+                
             } else {
                 if (response.status !== 200) {
                     alert('Error al modificar la película');
@@ -71,7 +75,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             location.reload();
         } catch (error) {
             console.error('Error:', error);
+            
             alert('Error al guardar la película');
         }
+
+        formulario.reset();
+        location.reload();
     });
 });
